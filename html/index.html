@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pause</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root" class="hidden">
+        <div id="bg"><div class="grid-floor"></div><div class="vignette"></div></div>
+
+        <div class="wrap" id="wrap">
+            <header class="topbar panel brackets">
+                <div class="who">
+                    <div class="avatar" id="avatar"></div>
+                    <div class="who-tx">
+                        <b id="pName">Player</b>
+                        <span id="pSub">Paused</span>
+                    </div>
+                </div>
+                <div class="brand">
+                    <span class="brand-name" id="sServer">Server</span>
+                    <span class="brand-tag" id="sTag">Pause Menu</span>
+                </div>
+                <div class="session">
+                    <div class="sess"><span class="live"></span><span id="sOnline" class="num">0 / 0</span></div>
+                    <div class="sess clock"><span id="sClock" class="num">00:00</span></div>
+                </div>
+            </header>
+
+            <section class="chips" id="chips"></section>
+
+            <section class="grid">
+                <div class="col col-actions" id="actions"></div>
+                <div class="col col-links" id="links"></div>
+                <div class="col col-news panel brackets">
+                    <div class="news-head"><h2>Announcements</h2><span class="count" id="newsCount"></span></div>
+                    <div id="news" class="news"></div>
+                </div>
+            </section>
+
+            <div id="banner" class="banner brackets hidden"></div>
+
+            <footer class="foot">
+                <span class="hint"><b>ESC</b> Resume</span>
+            </footer>
+        </div>
+
+        <div id="confirm" class="confirm hidden"></div>
+        <div id="toast" class="toast hidden"></div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
