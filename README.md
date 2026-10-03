@@ -6,7 +6,8 @@ Works on **Qbox, QBCore and ESX**. Free to use.
 
 Support: [discord.gg/TzNJ6Z92Y5](https://discord.gg/TzNJ6Z92Y5)
 
-<!-- Add a screenshot here: ![Vexxd Pause Menu](https://your-image-link.png) -->
+<img width="1887" height="998" alt="vexxd_pausemenu" src="https://github.com/user-attachments/assets/d05a87c3-e679-4760-86fb-d98c8b393e88" />
+
 
 ## Features
 
