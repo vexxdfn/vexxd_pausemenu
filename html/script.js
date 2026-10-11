@@ -31,9 +31,6 @@ const ic = (n, s = 17) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" f
 
 let data = null;
 
-function initials(name) {
-    return String(name || '?').split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
-}
 function hexToRgb(hex) {
     const m = String(hex || '').replace('#', '').match(/^([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
     return m ? `${parseInt(m[1], 16)},${parseInt(m[2], 16)},${parseInt(m[3], 16)}` : '239,68,68';
@@ -58,8 +55,8 @@ function renderTop() {
     $('sClock').textContent = s.time;
 
     const av = $('avatar');
-    if (p.avatar) { av.style.backgroundImage = `url(${esc(p.avatar)})`; av.textContent = ''; }
-    else { av.style.backgroundImage = ''; av.textContent = initials(p.name); }
+    av.style.display = p.avatar ? '' : 'none';
+    av.style.backgroundImage = p.avatar ? `url(${esc(p.avatar)})` : '';
 }
 
 function renderChips() {

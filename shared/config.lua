@@ -9,7 +9,7 @@ Config.Framework = 'auto'
 Config.Server = {
     name     = 'Your Server Name',
     tagline  = 'Pause Menu',
-    logo     = '',        -- optional image URL shown top-left. Leave '' for initials.
+    logo     = '',        -- optional image URL shown top-left. Leave '' for none.
     maxSlots = 64,      -- shown next to the online count
 }
 
