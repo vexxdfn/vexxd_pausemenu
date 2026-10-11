@@ -3,16 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Pause</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="root" class="hidden">
-        <div id="bg"><div class="grid-floor"></div><div class="vignette"></div></div>
+        <div id="bg"></div>
 
         <div class="wrap" id="wrap">
-            <header class="topbar panel brackets">
+            <header class="topbar panel">
                 <div class="who">
                     <div class="avatar" id="avatar"></div>
                     <div class="who-tx">
@@ -25,7 +23,7 @@
                     <span class="brand-tag" id="sTag">Pause Menu</span>
                 </div>
                 <div class="session">
-                    <div class="sess"><span class="live"></span><span id="sOnline" class="num">0 / 0</span></div>
+                    <div class="sess"><span class="live"></span><span id="sOnline" class="num">0 / 0</span><small>online</small></div>
                     <div class="sess clock"><span id="sClock" class="num">00:00</span></div>
                 </div>
             </header>
@@ -35,16 +33,16 @@
             <section class="grid">
                 <div class="col col-actions" id="actions"></div>
                 <div class="col col-links" id="links"></div>
-                <div class="col col-news panel brackets">
+                <div class="col col-news panel">
                     <div class="news-head"><h2>Announcements</h2><span class="count" id="newsCount"></span></div>
                     <div id="news" class="news"></div>
                 </div>
             </section>
 
-            <div id="banner" class="banner brackets hidden"></div>
+            <div id="banner" class="banner hidden"></div>
 
             <footer class="foot">
-                <span class="hint"><b>ESC</b> Resume</span>
+                <span class="hint"><b>Esc</b> Resume</span>
             </footer>
         </div>
 

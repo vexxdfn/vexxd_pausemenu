@@ -21,7 +21,7 @@ Config.Stats = {
     cash    = true,
     bank    = true,
     job     = true,
-    phone   = true,   -- phone number, if your framework stores one
+    phone   = false,   -- phone number, if your framework stores one
     gang    = false,  -- QBCore and QBox only
     time    = true,   -- in-game date and time
     weather = true,
@@ -133,7 +133,7 @@ Config.Banner = {
 -- APPEARANCE
 -- ============================================================
 Config.UI = {
-    accent     = '#ef4444',   -- main accent colour
+    accent     = '#ef4444',   -- main accent color
     background = '',          -- optional background image URL
 }
 

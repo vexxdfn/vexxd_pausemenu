@@ -13,6 +13,25 @@ end
 
 Bridge.name = detect()
 
+local function detectNotify()
+    return started('vexxd_notify') and 'vexxd_notify' or 'ox_lib'
+end
+
+Bridge.notify = detectNotify()
+
+CreateThread(function()
+    Wait(3000)
+    Bridge.notify = detectNotify()
+end)
+
+function Bridge.Notify(src, msg, kind)
+    if Bridge.notify == 'vexxd_notify' then
+        exports.vexxd_notify:Notify(src, { title = 'Pause Menu', description = msg, type = kind, duration = 5000 })
+    else
+        TriggerClientEvent('ox_lib:notify', src, { type = kind, description = msg })
+    end
+end
+
 if Bridge.name == 'qb' or Bridge.name == 'qbx' then
     local Core
     pcall(function() Core = exports['qb-core']:GetCoreObject() end)

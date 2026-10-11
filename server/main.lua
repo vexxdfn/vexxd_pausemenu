@@ -59,13 +59,13 @@ lib.addCommand('announce', {
 }, function(source, args)
     if not isAdmin(source) then return end
     if not db() then
-        TriggerClientEvent('ox_lib:notify', source, { type = 'error', description = 'oxmysql is not running, so announcements cannot be saved.' })
+        Bridge.Notify(source, 'oxmysql is not running, so announcements cannot be saved.', 'error')
         return
     end
     exports.oxmysql:insert_async(
         'INSERT INTO `vexxd_pausemenu_announcements` (`title`, `body`, `tag`) VALUES (?, ?, ?)',
         { args.title, args.body, args.tag })
-    TriggerClientEvent('ox_lib:notify', source, { type = 'success', description = 'Announcement posted.' })
+    Bridge.Notify(source, 'Announcement posted.', 'success')
 end)
 
 lib.addCommand('delannounce', {
@@ -73,5 +73,5 @@ lib.addCommand('delannounce', {
 }, function(source)
     if not isAdmin(source) or not db() then return end
     exports.oxmysql:query_async('DELETE FROM `vexxd_pausemenu_announcements` ORDER BY `id` DESC LIMIT 1', {})
-    TriggerClientEvent('ox_lib:notify', source, { type = 'success', description = 'Latest announcement removed.' })
+    Bridge.Notify(source, 'Latest announcement removed.', 'success')
 end)

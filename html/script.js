@@ -10,23 +10,24 @@ const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&l
 const money = n => '$' + Number(n || 0).toLocaleString('en-US');
 
 const ICONS = {
-    map:'<path d="M9 4L3 7v13l6-3 6 3 6-3V4l-6 3z"/><path d="M9 4v13M15 7v13"/>',
-    settings:'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 9 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 4.6 9a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/>',
-    power:'<path d="M18.4 6.6a9 9 0 1 1-12.8 0"/><path d="M12 2v10"/>',
-    play:'<path d="M7 4l12 8-12 8z"/>',
-    user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
-    cash:'<rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/>',
-    bank:'<path d="M3 10l9-6 9 6"/><path d="M5 10v9M19 10v9M9 10v9M15 10v9M3 21h18"/>',
-    job:'<rect x="2" y="7" width="20" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>',
-    phone:'<rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/>',
-    gang:'<path d="M12 3l8 4v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/>',
-    clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
-    weather:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/>',
-    id:'<rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="9" cy="12" r="2.5"/><path d="M14 10h5M14 14h5"/>',
-    discord:'<path d="M9 7.5a12 12 0 0 1 6 0l.6-1.2a9 9 0 0 1 3.2 1.4c1.6 2.7 2.4 5.7 2.2 8.8a10 10 0 0 1-3.3 1.7l-.9-1.5"/><path d="M6.3 16.7L5.4 18.2a10 10 0 0 1-3.3-1.7c-.2-3.1.6-6.1 2.2-8.8a9 9 0 0 1 3.2-1.4L8 7.5"/><ellipse cx="9" cy="13" rx="1.3" ry="1.7" fill="currentColor" stroke="none"/><ellipse cx="15" cy="13" rx="1.3" ry="1.7" fill="currentColor" stroke="none"/>',
-    youtube:'<rect x="2.5" y="5.5" width="19" height="13" rx="4.5"/><path d="M10.5 9.3l5 2.7-5 2.7z" fill="currentColor" stroke="none"/>',
+    map: '<path d="M3 7l6 -3l6 3l6 -3v13l-6 3l-6 -3l-6 3v-13"/><path d="M9 4v13"/><path d="M15 7v13"/>',
+    settings: '<path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065"/><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>',
+    power: '<path d="M7 6a7.75 7.75 0 1 0 10 0"/><path d="M12 4l0 8"/>',
+    play: '<path d="M7 4v16l13 -8l-13 -8"/>',
+    user: '<path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/>',
+    cash: '<path d="M7 15h-3a1 1 0 0 1 -1 -1v-8a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v3"/><path d="M7 10a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v8a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1l0 -8"/><path d="M12 14a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/>',
+    bank: '<path d="M3 21l18 0"/><path d="M3 10l18 0"/><path d="M5 6l7 -3l7 3"/><path d="M4 10l0 11"/><path d="M20 10l0 11"/><path d="M8 14l0 3"/><path d="M12 14l0 3"/><path d="M16 14l0 3"/>',
+    job: '<path d="M3 9a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2l0 -9"/><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"/><path d="M12 12l0 .01"/><path d="M3 13a20 20 0 0 0 18 0"/>',
+    phone: '<path d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14"/><path d="M11 4h2"/><path d="M12 17v.01"/>',
+    gang: '<path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3"/>',
+    clock: '<path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 7v5l3 3"/>',
+    weather: '<path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"/>',
+    id: '<path d="M3 7a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -10"/><path d="M7 10a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M15 8l2 0"/><path d="M15 12l2 0"/><path d="M7 16l10 0"/>',
+    discord: '<path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"/><path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"/><path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3"/><path d="M7 16.5c3.5 1 6.5 1 10 0"/>',
+    youtube: '<path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8"/><path d="M10 9l5 3l-5 3l0 -6"/>',
+    link: '<path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"/><path d="M11 13l9 -9"/><path d="M15 4h5v5"/>',
 };
-const ic = (n, s = 17) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[n] || ICONS.user}</svg>`;
+const ic = (n, s = 17) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">${ICONS[n] || ICONS.user}</svg>`;
 
 let data = null;
 
@@ -35,7 +36,7 @@ function initials(name) {
 }
 function hexToRgb(hex) {
     const m = String(hex || '').replace('#', '').match(/^([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
-    return m ? `${parseInt(m[1], 16)},${parseInt(m[2], 16)},${parseInt(m[3], 16)}` : '63,207,110';
+    return m ? `${parseInt(m[1], 16)},${parseInt(m[2], 16)},${parseInt(m[3], 16)}` : '239,68,68';
 }
 
 function setVal(key, value) {
@@ -87,7 +88,6 @@ function renderActions() {
         <button class="tile ${b.size === 'small' ? 'small' : 'large'} ${b.danger ? 'danger' : ''} ${b.image ? 'has-img' : ''}"
                 data-btn="${i}" ${b.image ? `style="background-image:url(${esc(b.image)})"` : ''}>
             ${b.image ? '<span class="shade"></span>' : ''}
-            <span class="sheen"></span>
             <span class="ic">${ic(b.icon, 19)}</span>
             <span class="tx"><b>${esc(b.label)}</b>${b.sub ? `<span>${esc(b.sub)}</span>` : ''}</span>
         </button>`).join('');
@@ -96,12 +96,11 @@ function renderActions() {
 function renderLinks() {
     $('links').innerHTML = data.config.links.map((l, i) => `
         <button class="link" style="--c:${esc(l.accent || '#3fcf6e')}" data-link="${i}">
-            <span class="glow"></span>
             <span class="top">
-                <span class="badge">${ic(l.icon, 20)}</span>
+                <span class="badge">${ic(l.icon, 24)}</span>
                 <span><b>${esc(l.title)}</b><span class="sub">${esc(l.sub || '')}</span></span>
             </span>
-            <span class="cta">${esc(l.cta || 'Open')}</span>
+            <span class="cta">${esc(l.cta || 'Open')}${ic('link', 14)}</span>
             ${l.members ? `<span class="members">${esc(l.members)}</span>` : ''}
         </button>`).join('');
 }
@@ -125,10 +124,11 @@ function renderBanner() {
     const el = $('banner');
     if (!b || !b.enabled) { el.classList.add('hidden'); return; }
     el.classList.remove('hidden');
-    el.style.setProperty('--c', b.accent || '#3fcf6e');
+    if (b.accent) el.style.setProperty('--c', b.accent); else el.style.removeProperty('--c');
     el.style.backgroundImage = b.image ? `url(${esc(b.image)})` : '';
+    el.classList.toggle('has-img', !!b.image);
     el.innerHTML = `
-        <span class="bglow"></span><span class="stripes"></span>
+        ${b.image ? '<span class="shade"></span>' : ''}
         <span class="btx"><b>${esc(b.title)}</b><span>${esc(b.sub || '')}</span></span>
         ${b.cta ? `<span class="bcta">${esc(b.cta)}</span>` : ''}`;
     el.onclick = () => {
@@ -147,8 +147,8 @@ function playEntrance() {
 function renderAll() {
     const ui = data.config.ui || {};
     const root = document.documentElement;
-    root.style.setProperty('--accent', ui.accent || '#3fcf6e');
-    root.style.setProperty('--accent-rgb', hexToRgb(ui.accent || '#3fcf6e'));
+    root.style.setProperty('--accent', ui.accent || '#ef4444');
+    root.style.setProperty('--accent-rgb', hexToRgb(ui.accent || '#ef4444'));
 
     const bg = $('bg');
     if (ui.background) { bg.classList.add('img'); bg.style.backgroundImage = `linear-gradient(rgba(5,7,9,.8),rgba(5,7,9,.88)), url(${esc(ui.background)})`; }
@@ -161,7 +161,7 @@ function renderAll() {
 let toastTimer = null;
 function toast(msg) {
     clearTimeout(toastTimer);
-    $('toast').textContent = msg;
+    $('toast').innerHTML = `${ic('link', 18)}<span>${esc(msg)}</span>`;
     $('toast').classList.remove('hidden');
     toastTimer = setTimeout(() => $('toast').classList.add('hidden'), 2600);
 }
@@ -200,9 +200,10 @@ function runButton(b) {
     nui('action', { action: b.action, url: b.url, event: b.event, args: b.args });
 }
 
-function askConfirm(text, onYes) {
+function askConfirm(text, onYes, icon) {
     $('confirm').innerHTML = `
         <div class="confirm-card">
+            <span class="confirm-ic">${ic(icon || 'power', 26)}</span>
             <b>${esc(text)}</b>
             <div class="confirm-row">
                 <button data-no>Cancel</button>
@@ -218,7 +219,7 @@ document.addEventListener('click', e => {
     const btn = e.target.closest('[data-btn]');
     if (btn) {
         const b = data.config.buttons[Number(btn.dataset.btn)];
-        if (b.confirm) askConfirm(b.confirm, () => runButton(b));
+        if (b.confirm) askConfirm(b.confirm, () => runButton(b), b.icon);
         else runButton(b);
         return;
     }

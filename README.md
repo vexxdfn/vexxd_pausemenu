@@ -6,8 +6,7 @@ Works on **Qbox, QBCore and ESX**. Free to use.
 
 Support: [discord.gg/TzNJ6Z92Y5](https://discord.gg/TzNJ6Z92Y5)
 
-<img width="1887" height="998" alt="vexxd_pausemenu" src="https://github.com/user-attachments/assets/d05a87c3-e679-4760-86fb-d98c8b393e88" />
-
+<!-- Add a screenshot here: ![Vexxd Pause Menu](https://your-image-link.png) -->
 
 ## Features
 
@@ -17,7 +16,7 @@ Support: [discord.gg/TzNJ6Z92Y5](https://discord.gg/TzNJ6Z92Y5)
 - Community link cards for Discord, YouTube or anything else
 - Announcements from the config, or posted in game by admins
 - Optional bottom banner for events and updates
-- One accent colour to match your server's branding
+- One accent color to match your server's branding
 - Auto-detects your framework
 
 ## Requirements
@@ -52,7 +51,7 @@ Everything is in `shared/config.lua`.
 | `Config.Links` | The community cards in the middle |
 | `Config.Announcements` | Announcements shown until you post one in game |
 | `Config.Banner` | The wide strip along the bottom (off by default) |
-| `Config.UI` | Accent colour and background image |
+| `Config.UI` | Accent color and background image |
 | `Config.Behaviour` | Freeze the player while open, refresh interval |
 
 ### Buttons
