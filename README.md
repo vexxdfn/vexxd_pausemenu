@@ -98,3 +98,11 @@ Admins are anyone with the `vexxd_pausemenu.admin` ace or your framework's admin
 
 - The gang chip works on Qbox and QBCore.
 - Link cards open in the player's browser. If that isn't possible the link is copied to their clipboard.
+
+## 💎 Paid Scripts
+
+Looking for more scripts? Check out the full collection of paid scripts available on my Tebex store!
+
+🛒 **[VEXXD SCRIPTS | Tebex Store](https://vexxd-scripts.tebex.store/)**
+
+
