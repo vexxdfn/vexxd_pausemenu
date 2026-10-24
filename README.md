@@ -1,7 +1,6 @@
 # Vexxd Pause Menu
 
-<img width="1768" height="752" alt="image" src="https://github.com/user-attachments/assets/b8627cca-f527-4d4f-83eb-19c288807051" />
-
+<img width="1789" height="841" alt="newpausemenu" src="https://github.com/user-attachments/assets/782152ef-20eb-4609-8d94-2c18736c9797" />
 
 A custom pause menu for FiveM. Press ESC and players see your server's own menu instead of GTA's: character stats, action tiles, community links and announcements.
 
