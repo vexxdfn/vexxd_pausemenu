@@ -4,7 +4,7 @@ lua54 'yes'
 
 author 'Vexxd Scripts'
 description 'Custom Pause Menu - for ESX, QBCore and QBox discord.gg/TzNJ6Z92Y5 for support'
-version '1.0.1'
+version '1.1.0'
 
 shared_scripts {
     '@ox_lib/init.lua',
